@@ -1,0 +1,12 @@
+# シークレット（絶対にコミットしない）
+.env
+.secrets.env
+.active-profile
+
+# モデルキャッシュ（巨大・再DL可能）
+hf-cache/
+
+# その他
+__pycache__/
+*.pyc
+/tmp/

@@ -1,0 +1,41 @@
+services:
+  shopai-fast-llm:
+    image: vllm/vllm-openai:latest
+    container_name: shopai-fast-llm
+    restart: unless-stopped
+    ipc: host
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./hf-cache:/root/.cache/huggingface
+    environment:
+      - HF_HOME=/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command:
+      - --model
+      - ${VLLM_MODEL}
+      - --served-model-name
+      - shopai-fast
+      - --api-key
+      - ${VLLM_API_KEY}
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --dtype
+      - auto
+      - --max-model-len
+      - "8192"
+      - --max-num-seqs
+      - "8"
+      - --gpu-memory-utilization
+      - "0.88"
+      - --enable-prefix-caching
+      - --generation-config
+      - vllm
