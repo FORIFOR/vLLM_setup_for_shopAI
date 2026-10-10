@@ -140,3 +140,9 @@ VRAM に応じて `docker-compose.yml` の `--max-model-len` / `--max-num-seqs` 
 | `nvidia-smi` が mismatch | ドライバ更新後の未再起動。`sudo reboot`。 |
 | Backend から繋がらない | `harden_node.sh` の `BACKEND_IP` を確認。Backend VM から `curl http://192.168.0.15:8000/v1/models -H "Authorization: Bearer <KEY>"` が 200 か。 |
 | `docker: permission denied` | `sudo` を付ける、または user を docker グループに追加。 |
+
+<!-- omm-scan-2026-10-11 -->
+
+## 構成図・依存関係
+
+[日本語の構成図と説明を見る](docs/architecture/omm-scan-2026-10-11/README.md)（2026-10-11 初回解析）。解析範囲と未検証事項はリンク先に記載しています。

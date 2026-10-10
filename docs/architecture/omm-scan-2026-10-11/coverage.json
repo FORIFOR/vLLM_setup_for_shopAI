@@ -1,0 +1,22 @@
+{
+  "repo": "FORIFOR/vLLM_setup_for_shopAI",
+  "branch": "main",
+  "tree_sha": "1a660a39c2579f870be67cc1b59dd1d070d2ab20",
+  "tree_files": 11,
+  "read_files": [
+    {
+      "path": "README.md",
+      "sha": "f7a8fca7882009c436f2adc0b073241147fe4546"
+    },
+    {
+      "path": "start_vllm.sh",
+      "sha": "8550d329ea6eac55e594689d27404411bed00545"
+    },
+    {
+      "path": "verify_autostart.sh",
+      "sha": "58902d74e624cdf9b44d77b9156399f2f5ee4300"
+    }
+  ],
+  "not_read_count": 8,
+  "scope": "initial entry-point and direct-import analysis; not exhaustive semantic scan"
+}
